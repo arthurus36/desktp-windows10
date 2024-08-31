@@ -14,14 +14,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      
+      - name: apt shit
+        run: |
+          sudo apt update
+          sudo apt remove microsoft-edge-stable
+          sudo apt purge snap* --autoremove
+          sudo apt-mark hold snapd
+      
       - name: ssh shit
         run: |
           echo "runner:pissoff" | sudo chpasswd
           mkdir ~/.ssh
           echo "ssh-j.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIiyFQuTwegicQ+8w7dLA7A+4JMZkCk8TLWrKPklWcRt" | tee ~/.ssh/known_hosts
-          sudo apt update
-          sudo apt install openssh-server -y
           sudo service ssh start
           ssh runner@ssh-j.com -N -R githubworkflowastro:22:localhost:22 ; watch -n0.2 "echo ass"
           
