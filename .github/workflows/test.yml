@@ -33,7 +33,7 @@ jobs:
           sudo apt purge snap* --autoremove
           sudo apt-mark hold snapd
           git clone https://github.com/novnc/novnc/
-          echo "vncserver -SecurityTypes none -rfbport 5901 ; ./novnc/utils/novnc_proxy --listen localhost:6969 --vnc localhost:5901" | sudo tee startvnc.sh
+          echo "vncserver -SecurityTypes none -rfbport 5901 ; ./novnc/utils/novnc_proxy --listen localhost:6969 --vnc localhost:5901" | tee startvnc.sh
           chmod +x startvnc.sh
           
       - name: ssh shit
