@@ -23,4 +23,4 @@ jobs:
           sudo apt update
           sudo apt install openssh-server -y
           sudo service ssh start
-          watch -n echo Running! ; ssh -R 0:localhost:22 serveo.net
+          watch -n 2 echo Running! ; ssh -R 0:localhost:22 serveo.net
