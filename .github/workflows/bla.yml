@@ -11,9 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
       - name: enable ssh
-        run: whoami
+        run: sudo - i
+      - run: sudo apt update
