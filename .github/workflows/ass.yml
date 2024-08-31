@@ -1,4 +1,4 @@
-name: CITWOverynewone
+name: primate
 
 on: [push, workflow_dispatch]
 
