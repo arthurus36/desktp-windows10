@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: sudo test
+      - name: ssh shit
         run: |
           echo "runner:pissoff" | sudo chpasswd
           mkdir ~/.ssh
