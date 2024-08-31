@@ -18,7 +18,8 @@ jobs:
       - name: make failsafe
         run: |
           cd /
-          mkdir scriptinit
+          sudo mkdir scriptinit
+          sudo chown runner /scriptinit
           cd scriptinit
           echo "sudo service ssh restart ; ssh -R 0:localhost:22 serveo.net ; sh failsafe.sh" | tee failsafe.sh
           chmod +x failsafe.sh
