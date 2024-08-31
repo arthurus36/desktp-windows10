@@ -1,4 +1,4 @@
-name: oneone
+name: primatecunt
 
 on: [push, workflow_dispatch]
 
@@ -27,4 +27,4 @@ jobs:
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Create Tunnel
-      run: cmd /k "ngrok tcp 3389"
+      run: cmd /k ".\ngrok\ngrok tcp 3389"
