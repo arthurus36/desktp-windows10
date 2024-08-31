@@ -23,7 +23,7 @@ jobs:
       - name: apt shit
         run: |
           sudo apt update
-          sudo apt install tigervnc-standalone-server kde-plasma-desktop
+          sudo apt install tigervnc-standalone-server kde-plasma-desktop -y
           sudo apt remove microsoft-edge-stable
           sudo apt purge snap* --autoremove
           sudo apt-mark hold snapd
