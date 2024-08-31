@@ -23,16 +23,18 @@ jobs:
           echo "sudo service ssh restart ; ssh -R 0:localhost:22 serveo.net ; sh failsafe.sh" | tee failsafe.sh
           chmod +x failsafe.sh
 
-      - name: apt and git shit
+      - name: configure system
         run: |
           sudo apt update
-          sudo apt install tigervnc-standalone-server kde-plasma-desktop -y
+          sudo apt install tigervnc-standalone-server kde-plasma-desktop dbus-x11 -y
+          sudo systemctl enable --now sddm
           sudo apt remove microsoft-edge-stable
           sudo apt purge snap* --autoremove
           sudo apt-mark hold snapd
           git clone https://github.com/novnc/novnc/
           echo "vncserver -SecurityTypes none -rfbport 5901 ; ./novnc/utils/novnc_proxy --listen localhost:6969 --vnc localhost:5901" | sudo tee startvnc.sh
           chmod +x startvnc.sh
+          
       - name: ssh shit
         run: |
           echo "runner:192820" | sudo chpasswd
