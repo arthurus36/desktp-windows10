@@ -1,0 +1,19 @@
+name: macos14
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    #  - uses: actions/checkout@v4
+
+      - name: test
+        run: |
+          sudo systemsetup -setremotelogin on
