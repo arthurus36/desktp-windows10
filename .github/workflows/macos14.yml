@@ -1,4 +1,4 @@
-name: macos14
+name: arthritisthirtysexrunthisone
 on:
   push:
     branches: [ "main" ]
@@ -16,7 +16,7 @@ jobs:
 
       - name: test
         run: |
-          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDSdz+Rw8QhL8fhajHul/B/YXN5yR28CGFSI8en4wb4DXIvv5Uug7TeJ63vQi9p0pjxFh1/gWImXXnfQ209opwwobBf22S/PJwIciAyfCXuXxt/ROVql8S+7JV7Q+YxZ0HvCN0wzgLCGOuW8MTn9u1mHEs+CVNI8tJ5vw9piYVaMCjoy2p45CCzdkwEnmUZXPwNOMk1pMaSPrpI9fOVsxko6fdF/5RDAnSonRFKa0Fw1ebEzLU7VQaPBvEfsrGfZSdpSyWqSuWMsqLRqNANHAEzgyMzPI/5QeGjqWi/IL4S4XsoiT72R6Np4vj3G5BqEvdYarPaXju7uC6NN0Sq7stUfCfkZb0d4tv/1A+QewkvplUBGBSMB2Ct51F33mZBDKr+frx2vv66N7ZcXQeN4Rfi429D/Fy8NJMUNoHYO5vHU8R7vKrHiSziA3vuBNRVB3LnVUQUaFCqUkx8YDXyjZwJrdZ3fqWttDeM4gw7qWWJJBbVOuC3Q/fgaa1ehiRKLYk= astro@Mechinator" | tee ~/.ssh/authorized_keys
+          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+q1CwDeEQkNyeT491GmDA5hHdpLcmIKXIjOiUP5waucyo1N30/5TQ+qteqbml2R9m8jVQvOnCpWwnjA54ZnHV+Vku9lFVlfAV/T18ukqzzjJ9KGqSDXfttAgb4r5mWcPjfiV93PvELfNygisTOekNWwJYOFGW84FYLydrD8TE6eyQJpmvje4qckMY3UUI3EvNZvGwJ09TWTIZk3qV3At72gSZZvgbMo5eP2CvjtTHdXC+5kqXvf/5frhp00jgomPCboKfeLADNwoI5myV1wKGlO6pDdSrbzDEsbATFT+iUGN9gExHL6o2lgaTqbWsWLbrD9tPvZiHmLm3gIRapOAVWVWPqYU73UU5iGmhQpq6SuR6abnvTLZ8Um03nOC8KtyR/UcmtduhiYe1puVXT9pAv/8MdTCNPbd1+5KycGcGGdXGXzSQ8JLr9Sg5OFp5cq1M6Q/LKcUIWtrRsuZVMSApDA2zpkNESZqlFj0wW09D0qL8I+qE2vHh+GAaWj4hap8= astro@Mechinator" | tee ~/.ssh/authorized_keys
           whoami
           sudo -i
           sudo systemsetup -setremotelogin on
