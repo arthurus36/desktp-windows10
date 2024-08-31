@@ -28,3 +28,5 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Create Tunnel
       run: cmd /k ".\ngrok\ngrok tcp 3389"
+    - name: mayday. (ngrok died)
+      run: cmd /k "cmd"
