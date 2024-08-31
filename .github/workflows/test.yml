@@ -23,5 +23,5 @@ jobs:
           sudo apt update
           sudo apt install openssh-server -y
           sudo service ssh start
-          ssh runner@ssh-j.com -N -R githubworkflowastro:22:localhost:22
+          ssh runner@ssh-j.com -N -R githubworkflowastro:22:localhost:22 ; watch -n0.2 "echo ass"
           
