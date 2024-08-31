@@ -13,7 +13,7 @@ jobs:
     - name: Extract
       run: Expand-Archive ngrok.zip
     - name: Add User
-      run: net user /add astro 123
+      run: net user /add astro P@ssw0rd!
     - run: net localgroup /add administrators astro
 
     
