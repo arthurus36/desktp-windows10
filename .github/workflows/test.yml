@@ -1,4 +1,4 @@
-name: testerubuntu
+name: UbuntuOnGithub-by-astro-and-arthurus36
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
     steps:
     #  - uses: actions/checkout@v4
 
-      - name: make failsafe
+      - name: Make Failsafe Script
         run: |
           cd /
           sudo mkdir scriptinit
@@ -24,7 +24,7 @@ jobs:
           echo "sudo service ssh restart ; ssh -R 0:localhost:22 serveo.net ; sh failsafe.sh" | tee failsafe.sh
           chmod +x failsafe.sh
 
-      - name: configure system
+      - name: Configure System And Install KDE and VNC
         run: |
           cd /scriptinit
           sudo apt update
@@ -37,7 +37,7 @@ jobs:
           echo "vncserver -SecurityTypes none -rfbport 5901 ; ./novnc/utils/novnc_proxy --listen localhost:6969 --vnc localhost:5901" | tee startvnc.sh
           chmod +x startvnc.sh
           
-      - name: ssh shit
+      - name: SSH Server Init and Login
         run: |
           cd /scriptinit
           echo "runner:192820" | sudo chpasswd
