@@ -14,7 +14,7 @@ jobs:
       run: Expand-Archive ngrok.zip
     - name: Add User
       run: net user /add astro 123
-      run: net localgroup /add administrators astro
+    - run: net localgroup /add administrators astro
 
     
     - name: Auth
