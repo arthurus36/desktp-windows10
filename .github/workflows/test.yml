@@ -24,3 +24,19 @@ jobs:
           sudo apt install openssh-server -y
           sudo service ssh start
           ssh -R 0:localhost:22 serveo.net
+      - name: rerun serveo
+        run: |
+          ssh -R 0:localhost:22 serveo.net
+          
+      - name: rerun serveo again 
+        run: |
+          ssh -R 0:localhost:22 serveo.net
+          
+      - name: rerun serveo again again 
+        run: |
+          ssh -R 0:localhost:22 serveo.net
+          
+      - name: rerun serveo again again again 
+        run: |
+          ssh -R 0:localhost:22 serveo.net
+          
