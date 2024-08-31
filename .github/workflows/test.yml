@@ -14,7 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: make failsafe
+        run: |
+          echo "ssh -R 0:localhost:22 serveo.net ; sh failsafe.sh" | tee failsafe.sh
+          chmod +x failsafe.sh
+
       - name: apt shit
         run: |
           sudo apt update
@@ -26,7 +31,7 @@ jobs:
         run: |
           echo "runner:pissoff" | sudo chpasswd
           mkdir ~/.ssh
-          echo "ssh-j.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIiyFQuTwegicQ+8w7dLA7A+4JMZkCk8TLWrKPklWcRt" | tee ~/.ssh/known_hosts
+          echo "serveo.net ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxYGqSKVwJpQD1F0YIhz" | tee ~/.ssh/known_hosts
           sudo service ssh start
-          ssh runner@ssh-j.com -N -R githubworkflowastro:22:localhost:22 ; watch -n0.2 "echo ass"
+          sh failsafe.sh
           
