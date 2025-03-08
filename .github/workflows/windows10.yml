@@ -1,4 +1,7 @@
 name: Windows 10
+schedule:
+    # Every minute, between 06:00 AM and 06:59 AM (UTC)
+    - cron: "* 6 * * *"
 
 on: [push, workflow_dispatch]
 
